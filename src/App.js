@@ -15,8 +15,10 @@
 
 
 // --------- Option 2 way to write this --------
+import './App.css';
 import { useState } from "react";
 import AnimalShow from "./AnimalShow";
+
 
 function getRandomAnimal() {
     const animals = ['bird', 'cat', 'cow', 'dog', 'gator', 'horse'];
@@ -55,9 +57,9 @@ function App()  {
     });
 
     return (
-    <div>
+    <div className='app'>
         <button onClick={handleClick}>Add Animal</button>  
-        <div>{renderedAnimals}</div>
+        <div className='animal-list'>{renderedAnimals}</div>
     </div>
     );
 }
