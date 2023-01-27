@@ -17,21 +17,44 @@
 // --------- Option 2 way to write this --------
 import { useState } from "react";
 
+function getRandomAnimal() {
+    const animals = ['bird', 'cat', 'cow', 'dog', 'gator', 'horse'];
+
+    return animals[Math.floor(Math.random() * animals.length)]
+}
+
 function App()  {
-    const [count, setCount] = useState(0);
+
+        // EXAMPLES FOR MYSELF TO DEMONSTATE DIFFERENT WAYS TO WRITE
+
+    // function makeArray() {
+    //     return [1, 10, 32, 40];
+    // }
+
+    // ---- This is the long hand version to write this out ---
+    // const myArray = makeArray();
+    // const firstElement = myArray[0];
+    // const secondElement = myArray[1];
+    // console.log(firstElement, secondElement);
+
+    // ----- This is destructuring the array -----
+    // const [firstElement, secondElement, thirdElement] = makeArray();
+    // console.log(firstElement, secondElement, thirdElement);
+
+    // THIS BELOW IS WHAT APPLIES TO MY APP
+ 
+    const [animals, setAnimals] = useState([]);
 
     const handleClick = () => {
-        setCount(count + 1);
+        setAnimals([...animals, getRandomAnimal()])
     };
 
-    return <div>
-        <button onClick={handleClick}>
-            Add Animal
-            </button>
-            <div>
-                Number of animals: {count}
-            </div>
-    </div>;
+    return (
+    <div>
+        <button onClick={handleClick}>Add Animal</button>  
+        <div>{animals}</div>
+    </div>
+    );
 }
 
 export default App;
