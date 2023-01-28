@@ -3,7 +3,7 @@
 ## Description
 A practice React app to demonstrate: 
 - `Events` 
-- ` useState`
+- `useState`
 - `Event Handlers`
 -  `List building` 
 - `Images`
